@@ -3,7 +3,8 @@ on:
   workflow_run:
     types:
       - completed
-    workflows: ["blank"]
+    workflows:
+      - 'Smoke Tests'
 
 jobs:
   automerge:
@@ -12,6 +13,4 @@ jobs:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        with:
-          ref: staging
+          ACCESS_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
