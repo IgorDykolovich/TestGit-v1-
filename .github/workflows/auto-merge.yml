@@ -3,7 +3,8 @@ on:
   workflow_run:
     types:
       - completed
-    workflows: ["blank"]
+    workflows:
+      - 'Smoke Tests'
 
 jobs:
   automerge:
