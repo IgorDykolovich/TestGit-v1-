@@ -1,8 +1,6 @@
 name: Manually triggered workflow
 on:
-  schedule:
-    - cron: '*/6 * * * *'
-
+  push:
   workflow_dispatch:
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
