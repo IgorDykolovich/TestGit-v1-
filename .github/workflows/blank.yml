@@ -49,3 +49,11 @@ jobs:
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
           GITHUB_TOKEN: "${{ secrets.ACCESS_TOKEN }}"
+
+  all_tests:
+    needs: automerge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: staging
