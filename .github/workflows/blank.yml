@@ -1,22 +1,16 @@
 name: Manually triggered workflow
 on:
-  push:
-    branches:
-      - '*'
+  # Triggers the workflow on push or pull request events but only for the main branch
   pull_request:
-    branches:
-      - staging
   
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          ref: staging
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -29,8 +23,8 @@ jobs:
           echo test, and deploy your project.
   # This workflow contains a single job called "build"
 
-  build2:
-    needs: build
+  job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it

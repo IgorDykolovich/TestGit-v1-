@@ -1,7 +1,10 @@
 name: automerge
 on:
-  pull_request:
-   
+  workflow_run:
+    types:
+      - completed
+    workflows: ["blank"]
+
 jobs:
   automerge:
     runs-on: ubuntu-latest
@@ -10,3 +13,5 @@ jobs:
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          ref: staging
