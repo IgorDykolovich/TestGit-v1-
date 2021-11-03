@@ -1,15 +1,12 @@
 name: Manually triggered workflow
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - staging
   
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
