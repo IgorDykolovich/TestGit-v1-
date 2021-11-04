@@ -10,6 +10,4 @@ jobs:
         with:
           ref: staging
       - name: Branch
-        run: |
-        git branch
-        cat test.txt
+        run: cat test.txt
