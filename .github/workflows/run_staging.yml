@@ -1,16 +1,11 @@
-name: Run_Staging
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  workflow_dispatch:
+name: Release Management
+on: 
   schedule:
-    - cron: '*/6 * * * *'
-
+   - cron: "*/5 * * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: 'staging'
-#      - name: Branch name
-#        run: echo running on branch ${GITHUB_REF##*/}
+          ref: staging
