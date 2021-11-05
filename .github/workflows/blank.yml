@@ -39,8 +39,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-    - if: failure()
-      run: echo "Something went wrong"
+
+      - if: failure()
+        run: echo "Something went wrong"
   # This workflow contains a single job called "build"
 
   automerge:
