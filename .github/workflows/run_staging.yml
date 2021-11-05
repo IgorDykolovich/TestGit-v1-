@@ -9,5 +9,5 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: staging
-      - name: Text
-        run: echo "test"
+      - name: Branch
+        run: cat test.txt
